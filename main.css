@@ -13,16 +13,19 @@ Tested:     11/30/19
 ------------ Basic Styles ------------
 */
 
+* {
+    box-sizing: border-box;
+}
+
 html,
 body {
-    color: #FFFFFF;
-    background-color: #FF0000;
-    position: absolute;
-    height: 100%;
-    width: 100%;
     margin: 0;
-    padding: 0;
-    border: 0;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    background-color: #FF0000;
+    color: #FFFFFF;
 }
 
 
@@ -30,115 +33,84 @@ body {
 ------------ Containers ------------
 */
 
-
-/* Split the Window into 2 Rows, 1 for the Nav & 1 for the Body */
-
-.container-row {
+#nav {
     display: flex;
-    flex-direction: column;
-    flex: 1 1 auto;
-    height: 100%;
-    min-height: 100%;
-}
-
-.nav {
-    background-color: #5a5a5a;
-    display: flex;
-    flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    height: 3.6em;
-    min-height: 3.6em;
-    border: 1px solid cyan;
-}
-
-.content {
-    flex: 0 1 auto;
-    border: 1px solid red;
-}
-
-
-/* Split the Body Row into 2 Columns, 1 for the Form Input & 1 for the content */
-
-.container-column {
-    display: flex;
-    justify-content: flex-start;
-    height: 100%;
-}
-
-.form {
-    background-color: #262626;
-    display: flex;
-    flex-direction: column;
-    flex: 0 0 20%;
-    text-align: center;
-    border: 1px solid lime;
-}
-
-.display {
-    background-color: #ccc;
-    display: flex;
-    flex-direction: column;
-    flex: 1 1 auto;
-    border: 1px solid gold;
-    padding: 50px;
-}
-
-
-/* Split the Form Column into 2 Rows, 1 for the Form Inputs & 1 for the Form Controls */
-
-
-/*
-.form>.form-box {
-    display: flex;
-    flex-direction: column;
-}
-
-.form>.form-inputs {
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    flex: 0 0 95%;
-}
-
-.form>.form-controls {
-    flex-direction: row;
     flex: 0 0 5%;
-    justify-content: space-around;
-    align-items: center;
+    background-color: #262626;
 }
-*/
 
-
-/* Set the Display Container to scrollable items*/
-
-.snippets {
+.container {
     display: flex;
     flex-direction: column;
-    border: 1px solid purple;
-    overflow: scroll;
+    flex: 1 0 auto;
+    overflow: auto;
 }
 
-.item {
-    padding: 20px;
-    border-top: 1px solid #000;
-    text-align: center;
-    color: #000;
+#form.container {
+    justify-content: flex-start;
+    align-items: center;
+    flex: 0 0 20%;
+    background-color: #353535;
+}
+
+#content {
+    background-color: #CCCCCC;
+    flex: 1 0 0px;
+    display: flex;
+    flex-direction: row;
+    min-height: 0px;
 }
 
 
 /* 
------------- Controls ------------
+------------ Snippets ------------
 */
 
-button {
+.item {
+    margin: 15px;
+    padding: 5px;
+    background-color: #353535;
+}
+
+.item-title,
+.item-body,
+.item-link {
+    padding: 10px;
+    border: 1px solid #000000;
+}
+
+.item-title {
+    text-align: center;
+}
+
+
+/* Form Fields */
+
+#form-inputs {
     background-color: #111111;
     color: #FFFFFF;
     border: solid 0.5px #FFFFFF;
     padding: 10px 25px;
 }
 
-input {
+#form-controls {
+    width: 80%;
+    margin: 10px;
+    background-color: #111111;
+    color: #FFFFFF;
+    border: solid 0.5px #FFFFFF;
+    padding: 10px 25px;
+}
+
+
+/* 
+------------ Nav Controls ------------
+*/
+
+#nav-controls {
+    appearance: button;
     background-color: #111111;
     color: #FFFFFF;
     border: solid 0.5px #FFFFFF;
