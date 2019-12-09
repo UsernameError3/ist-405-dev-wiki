@@ -22,15 +22,15 @@ Tested:     12/08/19
 <body>
     <div id="content">
         <div class="container">
-            <span>
+            <div>
                 <a id="nav-controls" href="pinsnippet.php">Pin Snippet</a>
-            </span>    
-            <span>
+            </div>
+            <div>
                 <a id="nav-controls" href="addsnippet.php">Add Snippet</a>
-            </span>
-            <span>
+            </div>
+            <div>
                 <a id="nav-controls" href="pinned.php">Pinned Page</a>
-            </span>
+            </div>
         </div>
     </div>
 </body>
